@@ -1,9 +1,13 @@
 <template>
 	<!-- 自定义组件，并从父组件传过来参数 -->
 	<view>
-		<view>自定义组件</view>
-		<view>姓名{{detail.name}}</view>
-		<text>年龄{{detail.age}}</text>
+		<view>
+			自定义组件[[
+			<text>姓名{{detail.name}}</text>
+			<text>年龄{{detail.age}}</text>
+			]]
+		</view>
+		
 		<view>
 			数组
 			<block v-for="item in list">{{item}}</block>
@@ -21,6 +25,7 @@
 			}
 		},
 		props: {
+			//detail和list可以自定义
 			detail: {
 				type: Object,
 				default: null,
