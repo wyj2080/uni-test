@@ -27,6 +27,9 @@
 				list: [1,2,3],
 			}
 		},
+		mounted: function(){
+			alert(this.$store.state.count)
+		},
 		methods: {
 			
 		}
