@@ -9,6 +9,10 @@
             "path" : "pages/navigator/navigator",
             "style" : {}
         }
+        ,{
+            "path" : "pages/vuex/vuex",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

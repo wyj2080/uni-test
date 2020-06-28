@@ -1,18 +1,14 @@
 <template>
 	<!-- 自定义组件，并从父组件传过来参数 -->
-	<view>
+	<view class="unit-class">
 		<view>
 			自定义组件[[
 			<text>姓名{{detail.name}}</text>
 			<text>年龄{{detail.age}}</text>
 			]]
-		</view>
-		
-		<view>
 			数组
 			<block v-for="item in list">{{item}}</block>
 		</view>
-
 
 	</view>
 </template>
@@ -43,6 +39,8 @@
 	}
 </script>
 
-<style>
-
+<style scoped>
+	.unit-class{
+		border: 1px solid #000;
+	}
 </style>

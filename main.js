@@ -3,19 +3,15 @@ import App from './App'
 import Vuex from 'vuex'
 
 Vue.use(Vuex);
-
-Vue.config.productionTip = false
-
-App.mpType = 'app'
-
-const app = new Vue({
-	...App
-})
-app.$mount()
-
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 10,
+	name: "wo shi shei"
+  },
+  //相当于computed
+  getters:{
+	  gname: state => {return state.name+" getter"},
+	  gcount: state => (param) => {return state.count + param}
   },
   mutations: {
     increment (state) {
@@ -23,3 +19,15 @@ const store = new Vuex.Store({
     }
   }
 })
+
+Vue.config.productionTip = false
+
+App.mpType = 'app'
+
+const app = new Vue({
+	...App,
+	store
+})
+app.$mount()
+
+

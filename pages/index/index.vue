@@ -3,8 +3,9 @@
 		<view class="intro">本项目已包含uni ui组件，可直接使用。</view>
 		<text class="intro">详见：</text>
 		<uni-link :href="href" :text="href"></uni-link>
-		<navigator url="/pages/navigator/navigator" hover-class="navigator-hover">
-			<button type="default">页面跳转</button>
+		<view>computed1:{{computed1}},computed2:{{computed2}}</view>
+		<navigator url="/pages/vuex/vuex" hover-class="navigator-hover">
+			<button type="primary" size="mini">vuex</button>
 		</navigator>
 		<!-- 自定义组件 -->
 		<diy-unit :detail="obj" :list="list"></diy-unit>
@@ -25,10 +26,19 @@
 					age:20,
 				},
 				list: [1,2,3],
+				computed1: 5,
+				
 			}
 		},
 		mounted: function(){
-			alert(this.$store.state.count)
+			
+		},
+		//计算属性
+		computed: {
+			//computed2随着1的变化而变化
+			computed2: function(){
+				return this.computed1+1;
+			},
 		},
 		methods: {
 			
