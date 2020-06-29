@@ -1,8 +1,9 @@
 <template>
 	<view>
-		<view>count:{{count}},name:{{name}}</view>
+		<view>count:{{aa}},name:{{bb}}</view>
 		<view>getters:{{this.$store.getters.gname}}</view>
 		<view>getters:传参数{{this.$store.getters.gcount(21)}}</view>
+		<button type="primary" size="mini" @tap="add">store add</button>
 	</view>
 	
 </template>
@@ -12,18 +13,21 @@
 	export default {
 		data() {
 			return {
-				
+			
 			}
 		},
 		computed: {
 			//多个参数的state
 			...mapState({
-				count: state => state.count,
-				name: state => state.name,
+				aa: state => state.count,
+				bb: state => state.name,
 			}),
 		},
 		methods: {
-			
+			add: function(){
+				this.$store.commit("add",10);
+				alert(this.aa)
+			}
 		}
 	}
 </script>
