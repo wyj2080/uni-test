@@ -4,9 +4,14 @@
 		<text class="intro">详见：</text>
 		<uni-link :href="href" :text="href"></uni-link>
 		<view>computed1:{{computed1}},computed2:{{computed2}}</view>
-		<navigator url="/pages/vuex/vuex" hover-class="navigator-hover">
-			<button type="primary" size="mini">vuex</button>
-		</navigator>
+		<view style="display: flex;">
+			<navigator url="/pages/vuex/vuex" hover-class="navigator-hover" class="right-10">
+				<button type="primary" size="mini">vuex</button>
+			</navigator>
+			<navigator url="/pages/flex/flex" hover-class="navigator-hover" class="right-10">
+				<button type="primary" size="mini">flex</button>
+			</navigator>
+		</view>
 		<!-- 自定义组件 -->
 		<diy-unit :detail="obj" :list="list"></diy-unit>
 	</view>
@@ -51,5 +56,8 @@
 		padding: 20px;
 		font-size: 14px;
 		line-height: 24px;
+	}
+	.right-10{
+		margin-right: 10rpx;
 	}
 </style>

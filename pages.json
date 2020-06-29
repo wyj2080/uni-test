@@ -13,6 +13,10 @@
             "path" : "pages/vuex/vuex",
             "style" : {}
         }
+        ,{
+            "path" : "pages/flex/flex",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
