@@ -10,6 +10,7 @@
 
 <script>
 	import {mapState} from "vuex";
+	import { mapMutations, mapActions } from 'vuex'
 	export default {
 		data() {
 			return {
@@ -17,15 +18,25 @@
 			}
 		},
 		computed: {
-			//多个参数的state
+			//多个参数的state,放在computed里
 			...mapState({
-				aa: state => state.count,
+				aa: state => state.count, //aa相当于this.$store.state.count
 				bb: state => state.name,
 			}),
 		},
 		methods: {
+			//多个方法,放在methods
+			...mapMutations({
+				setUser:'SET_USER',
+				dd:'add'
+			}),
+			...mapActions({
+				ac_add:'ac_add',
+				async_add: 'async_add'
+			}),
 			add: function(){
-				this.$store.commit("add",10);
+				this.setUser(999);
+				this.async_add(25).then(()=>{alert("123")});
 				alert(this.aa)
 			}
 		}
