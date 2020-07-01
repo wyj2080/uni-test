@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex);
 
 import {SET_USER} from "./mutations.js"
+import user from "./modules/user.js";
 
 const store = new Vuex.Store({
   state: {
@@ -42,6 +43,9 @@ const store = new Vuex.Store({
 	      commit('gotOtherData', await getOtherData())
 	    }
 	  
+  },
+  modules: {
+	  user
   }
 })
 //上面的store暴露出去
