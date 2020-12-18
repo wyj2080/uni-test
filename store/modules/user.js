@@ -1,21 +1,31 @@
 // initial state
 const state = () => ({
-  all: []
+  userInfo: {}
 })
 
 // getters
-const getters = {}
+const getters = {
+	token: state => {return state.userInfo.token}
+}
 
 // actions
 const actions = {
-  at(){
-	  console.log("at");
+  login(context, params){
+	  //后台login
+	  let userInfo={
+		  token:"64de",
+		  name:'张三',
+		  role:'店主'
+	  }
+	  context.commit('setUserInfo',userInfo);
   }
 }
 
 // mutations
 const mutations = {
-  
+  setUserInfo(state, userInfo){
+	  state.userInfo = userInfo;
+  }
 }
 
 export default {

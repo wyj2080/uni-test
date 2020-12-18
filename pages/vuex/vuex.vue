@@ -12,7 +12,7 @@
 </template>
 
 <script>
-	import {mapState} from "vuex";
+	import {mapState,mapGetters} from "vuex";
 	import { mapMutations, mapActions } from 'vuex'
 	export default {
 		data() {
@@ -26,21 +26,26 @@
 				aa: state => state.count, //aa相当于this.$store.state.count
 				bb: state => state.name,
 			}),
+			...mapGetters('user',['token'])
 		},
 		methods: {
-			//多个方法,放在methods
+			//多个方法,放在methods，重命名的用{}，不重命名的用[]
 			...mapMutations({
 				setUser:'SET_USER',
 				dd:'add'
 			}),
 			...mapActions({
 				ac_add:'ac_add',
-				async_add: 'async_add'
+				async_add: 'async_add',
 			}),
+			//命名空间
+			...mapActions('user',['login']),
 			add: function(){
-				this.setUser(999);
-				this.async_add(25).then(()=>{alert("123")});
-				alert(this.aa)
+				this.login().then(() => {console.log("登入成功")})
+				console.log(this.token)
+				// this.setUser(999);
+				// this.async_add(25).then(()=>{alert("123")});
+				// alert(this.aa)
 			},
 		}
 	}
