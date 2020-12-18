@@ -4,9 +4,6 @@
 		<view>getters:{{this.$store.getters.gname}}</view>
 		<view>getters:传参数{{this.$store.getters.gcount(21)}}</view>
 		<button type="primary" size="mini" @tap="add">store add</button>
-		<navigator url="/pages/vuex/next" hover-class="navigator-hover" class="right-10">
-			<button type="primary" size="mini">next</button>
-		</navigator>
 	</view>
 	
 </template>
@@ -41,7 +38,7 @@
 				this.setUser(999);
 				this.async_add(25).then(()=>{alert("123")});
 				alert(this.aa)
-			},
+			}
 		}
 	}
 </script>
