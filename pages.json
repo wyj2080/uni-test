@@ -20,7 +20,10 @@
         ,{
             "path" : "pages/flex/flex",
             "style" : {}
-        }
+        },{
+		    "path" : "pages/pay/pay",
+		    "style" : {}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

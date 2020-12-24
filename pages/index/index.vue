@@ -11,6 +11,9 @@
 			<navigator url="/pages/flex/flex" hover-class="navigator-hover" class="right-10">
 				<button type="primary" size="mini">flex</button>
 			</navigator>
+			<navigator url="/pages/pay/pay" hover-class="navigator-hover" class="right-10">
+				<button type="primary" size="mini">支付宝</button>
+			</navigator>
 		</view>
 		<!-- 自定义组件 -->
 		<diy-unit :detail="obj" :list="list"></diy-unit>
