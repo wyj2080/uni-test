@@ -7,7 +7,7 @@
 </template>
 
 <script>
-	import { getPay } from '@/api/pay.js'
+	import { getPay,test } from '@/api/pay.js'
 	export default {
 		data() {
 			return {
@@ -18,9 +18,8 @@
 			this.loadPage();
 		},
 		methods: {
-			//进入、回退自动调用
 			loadPage(){
-				this.getPay();
+				this.test();
 			},
 			getPay(){
 				let data = {
@@ -29,6 +28,13 @@
 					this.data = res.data;
 				})
 			},
+			test(){
+				let data = {
+				}
+				test(data).then(res=>{
+					this.data = res.data;
+				})
+			}
 		}
 	}
 </script>

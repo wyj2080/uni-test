@@ -24,7 +24,6 @@ function request(config) {
 		
 		//进行请求,一般外层都有一个封装,然后放在公共类里边
 		return new Promise((resolve,reject)=>{
-			alert("!23")
 			uni.request({
 				url: config.url.indexOf("http") == 0 ? config.url : API_URL + config.url,
 				method: config.method,
