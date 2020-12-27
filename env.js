@@ -8,5 +8,5 @@ const ENV_RESOURCE_URL = {
 	development: 'https://', //开发环境
 	production: 'https://', //生产环境
 }
-export const API_URL = "http://localhost:8066/api"; //后台接口域名
+export const API_URL = "/api"; //后台接口域名
 

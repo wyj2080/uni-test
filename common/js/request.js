@@ -3,10 +3,7 @@ import {	API_URL } from '@/env.js'
 function request(config) {
 	
 	let header = {
-		'x-enterprise-id': uni.getStorageSync('tenantId'),
 		'token': uni.getStorageSync('token')
-		// 'token': 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyVG9rZW4iLCJuYW1lIjoiIiwiaWQiOiIxMzI0NTU3MjU3OTU3ODIyNDY2IiwiZW50ZXJwcmlzZUlkIjoic210IiwiZXhwIjoxNjA0OTA5NDE0LCJwYXJhbXMiOnsidXNlcl9leHBhbmQiOnt9fSwidGVuYW50Ijoic210IiwidG9rZW4iOiI2Zjk4NzFiMDA5YjM0NDBmOGU5YzJiMjAxM2NmZDk4NyJ9.wQCYeZvOVBFUtiDLS-3lrqPuwAC7kPYlSl2zBhdKZLU'
-		// 'token': 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyVG9rZW4iLCJuYW1lIjoiIiwiaWQiOiIxMjgxNDcxMzI3MjU2ODEzNTY5IiwiZW50ZXJwcmlzZUlkIjoic210IiwiZXhwIjoxNjA1NjA1NTg5LCJwYXJhbXMiOnsidXNlcl9leHBhbmQiOnt9fSwidGVuYW50Ijoic210IiwidG9rZW4iOiJhOWM2Y2QwMDk1NGE0MDljOTc5ZjAxN2M4NGYyODM0NyJ9.CN05hsEN0kmoe1ZiO5bf-bbV_lcVzk-XX9rtFkqr69I'
 	};
 	
 	if(config.contentType){
