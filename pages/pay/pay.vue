@@ -1,12 +1,13 @@
 <template>
 	<view>
 		<vue-qr :text="data.qr_code" logoSrc="/static/images/zfb.png" :size="200"></vue-qr>
+		<button @tap="refund">退款</button>
 	</view>
 	
 </template>
 
 <script>
-	import { getPay,test } from '@/api/pay.js'
+	import { createPay,refund } from '@/api/pay.js'
 	import vueQr from 'vue-qr'
 	export default {
 		components:{
@@ -25,23 +26,21 @@
 		},
 		methods: {
 			loadPage(){
-				this.getPay();
+				this.createPay();
 			},
-			getPay(){
+			createPay(){
 				let data = {
 				}
-				getPay(data).then(res=>{
-					this.data = res.data;
+				createPay(data).then(res=>{
+					this.data = res.data.data.alipay_trade_precreate_response;
 					alert(JSON.stringify(this.data))
-				}).catch(err => {
-					this.data = err.data.alipay_trade_precreate_response;
 				})
 			},
-			test(){
+			refund(){
 				let data = {
 				}
-				test(data).then(res=>{
-					this.data = res.data;
+				refund(data).then(res=>{
+					alert(JSON.stringify(res.data))
 				})
 			}
 		}

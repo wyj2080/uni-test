@@ -1,19 +1,19 @@
 import request from '@/common/js/request.js'
 
 
-// 获取支付接口
-export function getPay(data){
+// 创建当面付
+export function createPay(data){
 	return request({
-		url: '/pay/test',
+		url: '/pay/create',
 		data,
 		method:"GET"
 	})
 }
 
-// 获取支付接口list
-export function test(data){
+// 退款接口
+export function refund(data){
 	return request({
-		url: '/java8/retain',
+		url: '/pay/refund',
 		data,
 		method:"GET"
 	})
