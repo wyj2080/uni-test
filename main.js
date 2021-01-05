@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 import store from '@/store'
 import VueQr from 'vue-qr'
-import {router,RouterMount} from '@/router/router.js'
+import {router,RouterMount} from '@/common/router.js'
 import tools from '@/common/tools'
 
 

@@ -1,5 +1,5 @@
 
-import {router} from '@/router/router.js'
+import {router} from '@/common/router.js'
 	
 	function msg(title){
 		uni.showToast({
