@@ -5,15 +5,9 @@
 		<uni-link :href="href" :text="href"></uni-link>
 		<view>computed1:{{computed1}},computed2:{{computed2}}</view>
 		<view style="display: flex;">
-			<navigator url="/pages/vuex/vuex" hover-class="navigator-hover" class="right-10">
-				<button type="primary" size="mini">vuex</button>
-			</navigator>
-			<navigator url="/pages/flex/flex" hover-class="navigator-hover" class="right-10">
-				<button type="primary" size="mini">flex</button>
-			</navigator>
-			<navigator url="/pages/pay/pay" hover-class="navigator-hover" class="right-10">
-				<button type="primary" size="mini">支付宝</button>
-			</navigator>
+			<button type="primary" size="mini" @tap="navTo('/pages/vuex/vuex')">vuex</button>
+			<button type="primary" size="mini" @tap="navTo('/pages/flex/flex')">flex</button>
+			<button type="primary" size="mini" @tap="navTo('/pages/pay/pay')">支付宝</button>
 		</view>
 		<!-- 自定义组件 -->
 		<diy-unit :detail="obj" :list="list"></diy-unit>
@@ -39,7 +33,6 @@
 			}
 		},
 		mounted: function(){
-			
 		},
 		//计算属性
 		computed: {
@@ -49,7 +42,9 @@
 			},
 		},
 		methods: {
-			
+			navTo(path,query){
+				this.$tools.routerTo(path,query);
+			}
 		}
 	}
 </script>

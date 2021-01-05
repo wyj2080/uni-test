@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<vue-qr :text="data.qr_code" logoSrc="/static/images/zfb.png" :size="200"></vue-qr>
+		<vue-qr :text="data.qrCode" logoSrc="/static/images/zfb.png" :size="200"></vue-qr>
 		<button @tap="refund">退款</button>
 	</view>
 	
@@ -16,7 +16,7 @@
 		data() {
 			return {
 				data:{
-					qr_code:'',
+					qrCode:'',
 					logo:'@/static/images/zfb.png'
 				}
 			}
@@ -32,8 +32,7 @@
 				let data = {
 				}
 				createPay(data).then(res=>{
-					this.data = res.data.data.alipay_trade_precreate_response;
-					alert(JSON.stringify(this.data))
+					this.data = res.data.data;
 				})
 			},
 			refund(){
