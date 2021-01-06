@@ -7,11 +7,12 @@ const router = createRouter({
 });
 //全局路由前置守卫
 router.beforeEach((to, from, next) => {
+	console.log("beforeEach")
 	next();
 });
 // 全局路由后置守卫
 router.afterEach((to, from) => {
-    console.log('跳转结束')
+	console.log("afterEach")
 })
 
 export {

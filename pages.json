@@ -30,6 +30,16 @@
 		    "path" : "pages/pay/pay",
 		    "style" : {}
 		}
+        
+        ,{
+            "path" : "pages/mixins/mixins",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

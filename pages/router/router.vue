@@ -7,6 +7,7 @@
 			<view class="list-item">444</view>
 			<button type="primary" size="mini" @tap="test">回退</button>
 			<button type="primary" size="mini" @tap="options">options</button>
+			<button type="primary" size="mini" @tap="forceEach">强制触发</button>
 		</view>
 		
 	</view>
@@ -19,12 +20,31 @@
 				
 			}
 		},
+		onLoad(){
+			console.log("onLoad")
+		},
+		onShow(){
+			console.log("onShow")
+		},
+		onUnload(){
+			console.log("unload")
+		},
+		//离开时调用
+		beforeRouteLeave(to, from, next) {
+			// 导航离开该组件的对应路由时调用
+			// 可以访问组件实例 `this`
+			console.log("离开beforeRouteLeave");
+			next();
+		},
 		methods: {
 			test(){
 				this.$tools.back();
 			},
+			forceEach(){
+				this.$tools.forceEach();
+			},
 			options(){
-				alert(JSON.stringify(this.$tools.getOptions(this)))
+				console.log(JSON.stringify(this.$tools.getOptions(this)))
 			}
 		}
 	}

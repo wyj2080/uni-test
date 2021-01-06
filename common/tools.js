@@ -44,6 +44,9 @@ import {router} from '@/common/router.js'
 		}
 	}
 	
+	/**
+	 * 回退
+	 */
 	function back(num){
 		if(num){
 			router.back(num);
@@ -52,12 +55,23 @@ import {router} from '@/common/router.js'
 		}
 	}
 	
+	/**
+	 * 获取路径参数
+	 */
 	function getOptions(context){
 		return context.$Route.query;
+	}
+	
+	/**
+	 * 原地刷新，触发beforeEach，不会触发onShow那种(h5不适用，小程序可以)
+	 */
+	function forceEach(){
+		router.forceGuardEach();
 	}
 
 export default {
 	routerTo,
 	back,
 	getOptions,
+	forceEach,
 }

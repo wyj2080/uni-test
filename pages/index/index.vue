@@ -9,6 +9,7 @@
 			<button type="primary" size="mini" @tap="navTo('/pages/flex/flex')">flex</button>
 			<button type="primary" size="mini" @tap="navTo('/pages/pay/pay')">支付宝</button>
 			<button type="primary" size="mini" @tap="navTo('/pages/router/router',{name:'123','p':100,a:[{cc:'啊啊'}]})">路由</button>
+			<button type="primary" size="mini" @tap="navTo('/pages/mixins/mixins')">mixins</button>
 		</view>
 		<!-- 自定义组件 -->
 		<diy-unit :detail="obj" :list="list"></diy-unit>
