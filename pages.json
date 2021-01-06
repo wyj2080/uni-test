@@ -21,7 +21,12 @@
         ,{
             "path" : "pages/flex/flex",
             "style" : {}
-        },{
+        }
+		,{
+            "path" : "pages/router/router",
+            "style" : {}
+        }
+		,{
 		    "path" : "pages/pay/pay",
 		    "style" : {}
 		}

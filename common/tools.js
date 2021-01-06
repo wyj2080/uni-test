@@ -43,7 +43,21 @@ import {router} from '@/common/router.js'
 
 		}
 	}
+	
+	function back(num){
+		if(num){
+			router.back(num);
+		}else{
+			router.back(1);
+		}
+	}
+	
+	function getOptions(context){
+		return context.$Route.query;
+	}
 
 export default {
 	routerTo,
+	back,
+	getOptions,
 }
