@@ -1,4 +1,7 @@
 {
+	"easycom": {
+			"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
 	"pages": [{
 		"path": "pages/index/index",
 		// "aliasPath": "/", //对于h5端你必须在首页加上aliasPath并设置为/
@@ -33,6 +36,15 @@
         
         ,{
             "path" : "pages/mixins/mixins",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/uViewUI/index",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

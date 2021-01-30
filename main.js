@@ -4,10 +4,13 @@ import store from '@/store'
 import VueQr from 'vue-qr'
 import {router,RouterMount} from '@/common/router.js'
 import tools from '@/common/tools'
+import uView from "uview-ui";
+
 
 
 
 Vue.use(router)
+Vue.use(uView);
 
 
 Vue.config.productionTip = false
