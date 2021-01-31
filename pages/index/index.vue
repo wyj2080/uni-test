@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<view class="intro">本项目已包含uni ui组件，可直接使用。</view>
+		<view class="intro">本项目用于学习uni-app。</view>
 		<text class="intro">详见：</text>
 		<uni-link :href="href" :text="href"></uni-link>
 		<view>computed1:{{computed1}},computed2:{{computed2}}</view>
@@ -12,7 +12,8 @@
 			<view><button type="primary" size="mini" @tap="navTo('/pages/mixins/mixins')">mixins</button></view>
 		</view>
 		<view style="display: flex;flex-direction: row;justify-content: space-between;">
-			<view><button type="primary" size="mini" @tap="navTo('/pages/uViewUI/index')">uViewUI</button></view>
+			<view><button type="primary" size="mini" @tap="navTo('/pages/uViewUI/class')">uViewUI内置样式</button></view>
+			<view><button type="primary" size="mini" @tap="navTo('/pages/uViewUI/components')">uViewUI组件</button></view>
 		</view>
 		<!-- 自定义组件 -->
 		<diy-unit :detail="obj" :list="list"></diy-unit>
@@ -27,7 +28,7 @@
 		},
 		data() {
 			return {
-				href: 'https://uniapp.dcloud.io/component/README?id=uniui',
+				href: 'http://vip.tadeyun.com',
 				obj:{
 					name:"aba",
 					age:20,

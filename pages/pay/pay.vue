@@ -1,17 +1,17 @@
 <template>
 	<view>
-		<vue-qr :text="data.qrCode" logoSrc="/static/images/zfb.png" :size="200"></vue-qr>
-		<button @tap="refund">退款</button>
+	<!-- 	<vue-qr :text="data.qrCode" logoSrc="/static/images/zfb.png" :size="200"></vue-qr>
+		<button @tap="refund">退款</button> -->
 	</view>
 	
 </template>
 
 <script>
 	import { createPay,refund } from '@/api/pay.js'
-	import vueQr from 'vue-qr'
+	// import vueQr from 'vue-qr'
 	export default {
 		components:{
-			vueQr
+			// vueQr
 		},
 		data() {
 			return {

@@ -44,7 +44,16 @@
             
         }
         ,{
-            "path" : "pages/uViewUI/index",
+            "path" : "pages/uViewUI/class",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/uViewUI/components",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",
