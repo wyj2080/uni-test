@@ -83,6 +83,14 @@
 		<u-divider>Calendar 日历</u-divider>
 		<u-calendar v-model="calendarShow" :mode="mode" @change="calendarChange"></u-calendar>
 		<u-button @click="calendarShow = true">日期选择</u-button>
+		
+		<u-rate :count="rateCount" v-model="rateValue"></u-rate>
+		<u-search placeholder="日照香炉生紫烟" v-model="search"></u-search>
+		<u-number-box v-model="value"></u-number-box>
+		<u-upload :action="action" :file-list="fileList" ></u-upload>
+		
+		<u-field v-model="mobile" label="手机号" placeholder="请填写手机号"></u-field>
+		<u-field v-model="code" label="验证码" placeholder="请填写验证码" ></u-field>
 	</view>
 </template>
 
@@ -127,6 +135,18 @@
 				//date/range
 				mode: 'date',
 				
+				rateCount: 5,
+				rateValue: 3,
+				search:'',
+				value: 6,
+				action: '上传地址',
+				fileList: [
+					{
+						url: '本地选择的图片',
+					}
+				],
+				mobile: '',
+				code:"",
 			};
 		},
 		// 必须要在onReady生命周期，因为onLoad生命周期组件可能尚未创建完毕
