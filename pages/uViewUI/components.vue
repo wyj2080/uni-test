@@ -28,8 +28,8 @@
 		<u-icon name="clock-fill" color="#2979ff" size="40"></u-icon>
 		<u-divider>u-image</u-divider>
 		<view class="u-flex">
-			<u-image width="30%" height="200rpx" :lazy-load="true" :src="src"></u-image>
-			<u-image width="30%" height="200rpx" :lazy-load="true" src="e"></u-image>
+			<u-image width="30%" height="200rpx" :lazy-load="true" :src="bg1"></u-image>
+			<u-image width="30%" height="200rpx" :lazy-load="true" :src="bg2"></u-image>
 		</view>
 		<u-divider>u-button</u-divider>
 		<view class="u-flex u-flex-wrap">
@@ -98,7 +98,8 @@
 	export default {
 		data() {
 			return {
-				src:'http://tadeyun.com:9000/images/bg.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20210131%2F%2Fs3%2Faws4_request&X-Amz-Date=20210131T061314Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=b1effed8c4b9369bb7ea01d2ddb980635ee4c2ace4f9a4fba01945c309d227f6',
+				bg1:'https://tadeyun.oss-cn-hangzhou.aliyuncs.com/bg1.jpg',
+				bg2:'https://tadeyun.oss-cn-hangzhou.aliyuncs.com/bg2.jpg',
 				tagShow: true,
 				type: 'number',
 				value: '',
