@@ -98,8 +98,8 @@
 	export default {
 		data() {
 			return {
-				bg1:'https://tadeyun.oss-cn-hangzhou.aliyuncs.com/bg1.jpg',
-				bg2:'https://tadeyun.oss-cn-hangzhou.aliyuncs.com/bg2.jpg',
+				bg1:'http://img.tadeyun.com:30800/images/2021/02/02/bg1.jpg',
+				bg2:'http://img.tadeyun.com:30800/images/2021/02/02/bg2.jpg',
 				tagShow: true,
 				type: 'number',
 				value: '',
