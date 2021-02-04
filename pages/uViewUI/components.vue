@@ -141,11 +141,7 @@
 				search:'',
 				value: 6,
 				action: '上传地址',
-				fileList: [
-					{
-						url: '本地选择的图片',
-					}
-				],
+				fileList: [],
 				mobile: '',
 				code:"",
 			};
