@@ -91,6 +91,61 @@
 		
 		<u-field v-model="mobile" label="手机号" placeholder="请填写手机号"></u-field>
 		<u-field v-model="code" label="验证码" placeholder="请填写验证码" ></u-field>
+		
+		<u-circle-progress :duration="2500" active-color="#2979ff" :percent="percent">
+			<view class="u-progress-content">
+				<view class="u-progress-dot"></view>
+				<text class='u-progress-info'>查找中</text>
+			</view>
+		</u-circle-progress>
+		<u-count-down :timestamp="timestamp"></u-count-down>
+		<view></view>
+		假期余额：<u-count-to ref='countTo' :start-val="startVal" :end-val="endVal"></u-count-to>天
+		<button size="mini" @click="addLife">续费假期</button>
+		<u-popup v-model="popShow" mode="center">
+			<view>
+				人生若只如初见，何事秋风悲画扇
+			</view>
+		</u-popup>
+		<button size="mini" @click="popShow = true">pop</button>
+		<u-line />
+		<u-divider>card</u-divider>
+		<u-card margin="30rpx" :show-head="false">aaa
+			<view class="" slot="body">
+				aaa
+			</view>
+		</u-card>
+		<u-mask :show="maskShow" @click="maskShow = false">
+			<view style="width: 100px;height: 100px;background-color: #fff;border-radius: 20upx;"></view>
+		</u-mask>
+		<button size="mini" @click="maskShow = true">maskShow</button>
+		<u-grid :col="3">
+			<u-grid-item>
+				<u-icon name="photo" :size="46"></u-icon>
+				<view class="grid-text">图片</view>
+			</u-grid-item>
+			<u-grid-item>
+				<u-icon name="lock" :size="46"></u-icon>
+				<view class="grid-text">锁头</view>
+			</u-grid-item>
+			<u-grid-item>
+				<u-icon name="hourglass" :size="46"></u-icon>
+				<view class="grid-text">沙漏</view>
+			</u-grid-item>
+		</u-grid>
+		<u-swiper :list="swiperList" :effect3d="true"></u-swiper>
+		<u-time-line>
+			<u-time-line-item>
+				<!-- 此处没有自定义左边的内容，会默认显示一个点 -->
+				<template v-slot:content>
+					<view>
+						<view class="u-order-desc">【深圳市】日照香炉生紫烟，遥看瀑布挂前川，飞流直下三千尺，疑是银河落九天。</view>
+						<view class="u-order-time">2019-12-06 22:30</view>
+					</view>
+				</template>
+			</u-time-line-item>
+		</u-time-line>
+		
 	</view>
 </template>
 
@@ -98,8 +153,8 @@
 	export default {
 		data() {
 			return {
-				bg1:'http://img.tadeyun.com:30800/images/2021/02/02/bg1.jpg',
-				bg2:'http://img.tadeyun.com:30800/images/2021/02/02/bg2.jpg',
+				bg1:'http://img.tadeyun.com:30800/images/2021/02/04/bg1.jpg',
+				bg2:'http://img.tadeyun.com:30800/images/2021/02/04/bg2.jpg',
 				tagShow: true,
 				type: 'number',
 				value: '',
@@ -144,11 +199,31 @@
 				fileList: [],
 				mobile: '',
 				code:"",
+				percent: 100,
+				timestamp: 60,
+				startVal: 0,
+				endVal: 0,
+				popShow: false,
+				maskShow: false,
+				swiperList: [{
+						image: 'http://img.tadeyun.com:30800/images/2021/02/04/bg1.jpg',
+						title: 't1'
+					},
+					{
+						image: 'http://img.tadeyun.com:30800/images/2021/02/04/bg2.jpg',
+						title: 't2'
+					},
+					{
+						image: 'http://img.tadeyun.com:30800/images/2021/02/04/bg3.jpg',
+						title: 't3'
+					}
+				],
 			};
 		},
 		// 必须要在onReady生命周期，因为onLoad生命周期组件可能尚未创建完毕
 		onReady() {
 			this.$refs.uForm.setRules(this.rules);
+			this.percentAdd();
 		},
 		methods:{
 			tagClick(){
@@ -165,6 +240,21 @@
 			},
 			calendarChange(e){
 				console.log(e)
+			},
+			percentAdd(){
+				let me = this;
+				setTimeout(() => {
+					console.log("st")
+					if(me.percent >= 100){
+						return;
+					}
+					me.percent += 0.5;
+					me.percentAdd();
+				},1)
+			},
+			addLife(){
+				this.startVal = Number(this.$refs.countTo.displayValue);
+				this.endVal += 100;
 			}
 		}
 	}
