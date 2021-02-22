@@ -70,6 +70,7 @@ import {router} from '@/common/router.js'
 	}
 
 export default {
+	msg,
 	routerTo,
 	back,
 	getOptions,

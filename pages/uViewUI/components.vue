@@ -151,7 +151,11 @@
 				</u-time-line-item>
 			</u-time-line>
 			<u-back-top :scroll-top="scrollTop"></u-back-top>
-			
+			<view style="width: 60%;">
+				<u-tabs name="diyName" count='diyCount' active-color="#2979ff" inactive-color="#606266" font-size="30"
+				:list="tabList" :is-scroll="false" :current="tabCurrent" @change="tabChange"></u-tabs>
+			</view>
+			<view>aaa</view>
 		</view>
 	</view>
 </template>
@@ -248,7 +252,18 @@
 					},
 				],
 				scrollTop: 0,
-							
+				tabList: [{
+					name:'aa',
+					diyName: '全部'
+				},{
+					name: '待收货'
+				}, {
+					name: '待付款'
+				}, {
+					name: '待评价',
+					count: 5
+				}],
+				tabCurrent: 0	
 			};
 		},
 		onPageScroll(e) {
@@ -289,6 +304,9 @@
 			addLife(){
 				this.startVal = Number(this.$refs.countTo.displayValue);
 				this.endVal += 100;
+			},
+			tabChange(index){
+				this.tabCurrent = index;
 			}
 		}
 	}

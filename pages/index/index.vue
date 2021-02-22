@@ -14,6 +14,7 @@
 		<view style="display: flex;flex-direction: row;justify-content: space-between;">
 			<view><button type="primary" size="mini" @tap="navTo('/pages/uViewUI/class')">uViewUI内置样式</button></view>
 			<view><button type="primary" size="mini" @tap="navTo('/pages/uViewUI/components')">uViewUI组件</button></view>
+			<view><button type="primary" size="mini" @tap="navTo('/pages/uViewUI/js')">uViewUI JS</button></view>
 		</view>
 		<!-- 自定义组件 -->
 		<diy-unit :detail="obj" :list="list"></diy-unit>
