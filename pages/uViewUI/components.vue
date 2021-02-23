@@ -155,7 +155,21 @@
 				<u-tabs name="diyName" count='diyCount' active-color="#2979ff" inactive-color="#606266" font-size="30"
 				:list="tabList" :is-scroll="false" :current="tabCurrent" @change="tabChange"></u-tabs>
 			</view>
-			<view>aaa</view>
+			<u-steps :list="numList" :current="1"></u-steps>
+			<view style="width: 100%;height: 300px;">
+				<u-empty text="空空如也" mode="car"></u-empty>
+			</view>
+			<u-divider>图片懒加载u-lazy-load</u-divider>
+			<u-lazy-load v-for="(item, index) in swiperList" :key="index" :image="item.image"></u-lazy-load>
+			<u-divider>验证码输入u-message-input</u-divider>
+			<u-message-input mode="box" :maxlength="4"></u-message-input>
+			<u-message-input mode="bottomLine" :maxlength="4"></u-message-input>
+			<u-popup v-model="yzmShow" mode="center">
+				<view>
+					<u-message-input mode="box" :maxlength="4"></u-message-input>
+				</view>
+			</u-popup>
+			<button size="mini" @click="yzmShow = true">验证码</button>
 		</view>
 	</view>
 </template>
@@ -263,7 +277,17 @@
 					name: '待评价',
 					count: 5
 				}],
-				tabCurrent: 0	
+				tabCurrent: 0,
+				numList: [{
+					name: '下单'
+				}, {
+					name: '出库'
+				}, {
+					name: '运输'
+				}, {
+					name: '签收'
+				}, ],
+				yzmShow: false,
 			};
 		},
 		onPageScroll(e) {
