@@ -16,9 +16,13 @@
 		<view>$u.test.email('13888889999')返回true/false</view>
 		<view>$u.test.code('4567', 4)返回true/false</view>
 		<view>$u.test.array([1, 2, 3])</view>
-		<view>还有jsonString/object/url</view>
-		<u-divider>验证空("undefined"和"false"和"0"和空对象也算)</u-divider>
-		<view>$u.test.empty(!'false')</view>
+		<view>还有jsonString/object/url/number/digits(整数)</view>
+		<view>idCard(身份证)/carNo(车牌号)/amount(金额)</view>
+		<view>chinese(汉字)/letter(字母)/enOrNum(数字或字母字符串)</view>
+		<view>contains('uView', 'View')/range(35, [30, 34])</view>
+		<u-divider>验证空：$u.test.empty()。</u-divider>
+		<view style="color: red;">和if的区别：0,'',null,undefined一致，{}会判断空，if判断有值</view>
+		
 	</view>
 </template>
 
@@ -26,6 +30,10 @@
 	export default {
 		created(){
 			// this.$tools.msg('Hello uView!')
+			let a = {};
+			if(a){
+				console.log("aaa")
+			}
 		},
 		data() {
 			return {
