@@ -78,7 +78,7 @@
 			
 			<u-divider>Form 表单</u-divider>
 			<u-input v-model="value" :type="type" :border="true" />
-			<u-form :model="form" ref="uForm">
+			<u-form :model="form" ref="uForm" :rules="rules">
 				<u-form-item label="姓名" prop="name"><u-input v-model="form.name" /></u-form-item>
 				<u-form-item label="手机" prop="mobile"><u-input v-model="form.mobile" /></u-form-item>
 				<u-form-item label="开关"><u-switch slot="right" v-model="form.switchVal"></u-switch></u-form-item>
@@ -170,6 +170,15 @@
 				</view>
 			</u-popup>
 			<button size="mini" @click="yzmShow = true">验证码</button>
+			<u-gap height="80" bg-color="#bbb"></u-gap>
+			<u-read-more :toggle="true"  show-height="300">
+				<rich-text :nodes="moreContent"></rich-text>
+			</u-read-more>
+			<u-avatar :src="bg1" :show-sex="true" sex-icon="man" :show-level="true"></u-avatar>
+			<u-avatar :src="bg1" :show-sex="true" sex-icon="woman" mode="square"></u-avatar>
+			<u-loading :show="true"></u-loading>
+			<u-loadmore :status="loadStatus" />
+			
 		</view>
 	</view>
 </template>
@@ -288,14 +297,22 @@
 					name: '签收'
 				}, ],
 				yzmShow: false,
+				moreContent: "山不在高，<br>有仙则名。<br>水不在深，<br>有龙则灵。<br>斯是陋室，<br>惟吾德馨。<br>苔痕上阶绿<br>，草色入帘青。<br>谈笑有鸿儒<br>，往来无白丁<br>。可以调素琴<br>，阅金经。",
+				loadStatus: 'loadmore',
 			};
 		},
 		onPageScroll(e) {
 			this.scrollTop = e.scrollTop;
 		},
+		onReachBottom(){
+			this.loadStatus = "loading";
+			setTimeout(() => {
+				this.loadStatus = "nomore";
+			}, 2000)
+		},
 		// 必须要在onReady生命周期，因为onLoad生命周期组件可能尚未创建完毕
 		onReady() {
-			this.$refs.uForm.setRules(this.rules);
+			// this.$refs.uForm.setRules(this.rules);
 			this.percentAdd();
 		},
 		methods:{
